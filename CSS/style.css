@@ -6,10 +6,6 @@ body {
     background-color: rgb(235, 233, 233);
 }
 
-.results {
-    display: block;
-}
-
 .result {
     margin: 1rem;
     padding: 1rem;
@@ -17,6 +13,14 @@ body {
     background: #fff;
     border: 2px solid rgb(71, 68, 68);
     border-radius: 1rem;
+}
+
+.error {
+    border: 1px solid #a50a0a; 
+    padding: 1rem;
+    color: #a50a0a;
+    background:rgb(241, 187, 187);
+
 }
 
 .loader {

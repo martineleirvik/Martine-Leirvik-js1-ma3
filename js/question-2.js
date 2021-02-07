@@ -5,6 +5,8 @@ const resultsContainer = document.querySelector(".results");
 
 async function getGames() {
 
+    try {
+
     const response = await fetch(url);
 
     const content = await response.json();
@@ -23,10 +25,13 @@ async function getGames() {
             break;
         }
 
-        resultsContainer.innerHTML += `<div class="result">${games[i].name}<div>`;
-        resultsContainer.innerHTML += `<div class="result">${games[i].rating}<div>`;
-        resultsContainer.innerHTML += `<div class="result">${games[i].tags.length}<div>`;
-
+        resultsContainer.innerHTML += `<div class="result">${games[i].name} ${games[i].rating} ${games[i].tags.length}<div>`;
+ 
+    }
+    }
+    catch (error) {
+        console.log(error);
+        resultsContainer.innerHTML = displayError("An error occured")
     }
 
 }
